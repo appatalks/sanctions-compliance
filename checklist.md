@@ -13,7 +13,7 @@
    - Deterimne if ***ownership*** has offices/relations under ***EU/US*** jurisdiction that can be leveraged.
    
 5. For ***EU/US*** ```Country of Origin```
-   - Build Report usig relevant template(s).
-   - Inform relavant ***ownership/entities*** under ***EU/US*** jurisdiction of the suspected violation. Follow company proccesses [if applicable](https://www.dowjones.com/professional/risk/glossary/sanctions/compliance/).
+   - Build Report using relevant template(s).
+   - Inform relevant ***ownership/entities*** under ***EU/US*** jurisdiction of the suspected violation. Follow company processes [if applicable](https://www.dowjones.com/professional/risk/glossary/sanctions/compliance/).
    - Submit report(s).
    - Build follow-up reminder automation.
