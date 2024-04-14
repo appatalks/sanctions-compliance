@@ -9,12 +9,12 @@
         - [x] ```A```
         - [ ] ```NS```
         - [ ] ```MX```
-   - [ ] Understand ***ownership*** of found ```IP Ranges```.
+   - [x] Understand ***ownership*** of found ```IP Ranges```.
    - [x] Cross-reference ```IP``` and ```Entity``` ***ownership*** to ```Country of Origin```.
   
 3. Filter out ***non-EU/US*** ```Country of Origin``` and build report.
    - [x] Should contain ```relevant country(ies)```,```entity(ies)```,```details of suspected violation```.
-   - [x] Deterimne if ***ownership*** has offices/relations under ***EU/US*** jurisdiction that can be leveraged.
+   - [ ] Deterimne if ***ownership*** has offices/relations under ***EU/US*** jurisdiction that can be leveraged.
    
 5. For ***EU/US*** ```Country of Origin```
    - [x] Build Report using relevant template(s).
