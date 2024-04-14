@@ -1,4 +1,5 @@
-1. [x] Grab latest ***EU/US*** Sanction Lists for review
+1. Grab latest ***EU/US*** Sanction Lists for review
+2. [x] Sources
 - https://data.europa.eu/data/datasets/consolidated-list-of-persons-groups-and-entities-subject-to-eu-financial-sanctions?locale=en
 - https://ofac.treasury.gov/specially-designated-nationals-and-blocked-persons-list-sdn-human-readable-lists
 
