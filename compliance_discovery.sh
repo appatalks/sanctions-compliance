@@ -206,8 +206,8 @@ if [[ "$email_answer" == "yes" ]]; then
 
         # Send the specific report to the extracted and filtered emails
         echo "Sending $report to $recipients..."
-        echo "# mail -s "Suspected Sanction Violation Report" -A "$report" -- $recipients"
-        mail -s "Suspected Sanction Violation Report" -A "$report" -- $recipients
+        echo "# mail -s "Suspected Sanction Violation Report" -q "$report" -- $recipients"
+        mailx -s "Suspected Sanction Violation Report" -q "$report" -- $recipients
 	echo ""
     done
     echo "Emails sent successfully."
