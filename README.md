@@ -1,5 +1,8 @@
 # Sanction Compliance Discovery Tool and Notification
 
+> [!IMPORTANT]
+> Manually verify and update reports for best results.
+
 ## Overview
 
 The _**Sanctions Compliance Discovery Tool**_ is designed to assist security researchers and compliance officers in monitoring and analyzing entities that may be subject to ```EU``` and ```US``` sanctions. This tool automates the retrieval and analysis of sanctions lists to identify and report on entities potentially violating these sanctions. By streamlining the process of sanctions compliance, this tool helps ensure that organizations under ```EU``` and ```US``` jurisdiction can efficiently adhere to [regulatory requirements](https://ofac.treasury.gov/) and mitigate the risks of [legal penalties](https://www.consilium.europa.eu/en/press/press-releases/2024/04/12/council-gives-final-approval-to-introduce-criminal-offences-and-penalties-for-eu-sanctions-violation/).
