@@ -1,47 +1,75 @@
-## **Sanctions Violation Report Form**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanctions Violation Report Form</title>
+</head>
+<body>
+    <h2><strong>Sanctions Violation Report Form</strong></h2>
 
-### **1. Description of the Suspected Sanctions Violation:**
-#### **Facts and Details of the Violation:**
-> Please describe here as precisely as possible the facts supporting a possible violation of EU sanctions.
-> Details on the following can be very relevant:
-> - relevant country(ies);
-> - individuals or companies/organisations involved and their nationality or incorporation status/nature of business;
-> - description of the goods concerned (including their quantity, customs codes, export control classification, etc);
-> - other relevant information (bank/transaction details, flight number, vessel identification, etc).
+    <h3><strong>1. Description of the Suspected Sanctions Violation:</strong></h3>
+    <h4><strong>Facts and Details of the Violation:</strong></h4>
+    <blockquote>
+        Please describe here as precisely as possible the facts supporting a possible violation of EU sanctions.<br>
+        Details on the following can be very relevant:
+        <ul>
+            <li>relevant country(ies);</li>
+            <li>individuals or companies/organisations involved and their nationality or incorporation status/nature of business;</li>
+            <li>description of the goods concerned (including their quantity, customs codes, export control classification, etc);</li>
+            <li>other relevant information (bank/transaction details, flight number, vessel identification, etc).</li>
+        </ul>
+    </blockquote>
 
-{{filtered_report_file}}
+    <div>
+	<pre>
 
-### **2. Relevant EU Sanctions Regime:**
-- Please select the appropriate EU sanctions regime from the provided list.
+	    {{filtered_report_file}}
+	
+	</pre>    
+    </div>
 
-  - [x] Russia
-  - [ ] Other
+    <h3><strong>2. Relevant EU Sanctions Regime:</strong></h3>
+    <ul>
+        <li>Please select the appropriate EU sanctions regime from the provided list.</li>
+        <li><input type="checkbox" checked disabled> Russia</li>
+        <li><input type="checkbox"> Other</li>
+    </ul>
 
-### **3. Source of Information:**
-- **Method of Discovery:**
-  - [ ] Press
-  - [ ] Employee
-  - [x] Other (Please Specify)
+    <h3><strong>3. Source of Information:</strong></h3>
+    <ul>
+        <li><strong>Method of Discovery:</strong></li>
+        <li><input type="checkbox"> Press</li>
+        <li><input type="checkbox"> Employee</li>
+        <li><input type="checkbox" checked disabled> Other (Please Specify)</li>
+    </ul>
+    <p>Cross-reference of EU/US Sanction Databases for Top Level Domain(s) and supporting infrastructure providers through open source tools.</p>
+    <ul>
+        <li><a href="https://www.treasury.gov/ofac/downloads/sdn.csv">https://www.treasury.gov/ofac/downloads/sdn.csv</a></li>
+        <li><a href="https://data.europa.eu/">https://data.europa.eu/</a></li>
+        <li><a href="https://whois.domaintools.com/">https://whois.domaintools.com/</a></li>
+    </ul>
 
-Cross-reference of EU/US Sanction Databases for Top Level Domain(s) and supporting infrastructure providers through open source tools. 
-- https://www.treasury.gov/ofac/downloads/sdn.csv
-- https://data.europa.eu/
-- https://whois.domaintools.com/
+    <h3><strong>4. Previous Reporting:</strong></h3>
+    <ul>
+        <li><strong>Have you reported this violation to a national competent authority in an EU Member State?</strong></li>
+        <li>Check with <a href="https://www.sanctionsmap.eu/#/main/authorities">Contacts of National Competent Authorities and the European Commission</a>.</li>
+        <li><input type="checkbox"> Yes</li>
+        <li><input type="checkbox"> No</li>
+        <li>If yes, please provide:</li>
+        <li><strong>Authority Contacted:</strong></li>
+        <li><strong>Member State:</strong></li>
+    </ul>
 
-### **4. Previous Reporting:**
-- **Have you reported this violation to a national competent authority in an EU Member State?**
-  - Check with [Contacts of National Competent Authorities and the European Commission](https://www.sanctionsmap.eu/#/main/authorities).
-  - [ ] Yes
-  - [ ] No
-- If yes, please provide:
-  - **Authority Contacted:**
-  - **Member State:**
+    <h3><strong>5. Contact Information:</strong></h3>
+    <p>[Optional] <strong>You may choose to remain anonymous or provide the following details (which will be kept confidential):</strong></p>
+    <ul>
+        <li><strong>Name:</strong></li>
+        <li><strong>Phone Number:</strong></li>
+        <li><strong>Email:</strong></li>
+    </ul>
 
-### **5. Contact Information:**
-- [Optional] **You may choose to remain anonymous or provide the following details (which will be kept confidential):**
-  - **Name:**
-  - **Phone Number:**
-  - **Email:**
+</body>
+</html>
 
 ---
-
