@@ -79,34 +79,36 @@ for ip in $(cat $eu_dns_records_file $us_dns_records_file | grep -oE "\b([0-9]{1
     echo "**Owner information suspected of sanction violations:** " >> $ip_ownership_file
     # Defined DNS Fields to pull. May want to grab contact information.
     whois $ip | grep -iE 'inetnum|OrgName|org-name|Country|address|phone|remarks|OrgAbuseEmail|abuse-email|abuse contact for' | gawk '
-    /abuse contact for|Abuse contact for/ { 
+    /abuse contact for|Abuse contact for/ {
         match($0, /\x27([^\x27]+@[^\x27]+)\x27/, arr);
-        if (length(arr[1]) > 0) print "email: " arr[1];
-        next; 
+        if (length(arr[1]) > 0) printf "\t\t%s\n", "email: " arr[1];
+        next;
     }
     /abuse@|@abuse/ {
         match($0, /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/, m);
-        if (length(m[0]) > 0) print "email: " m[0];
+        if (length(m[0]) > 0) printf "\t\t%s\n", "email: " m[0];
         next;
     }
     /remarks/ {
         if ($0 ~ /e-?mail/) {
             match($0, /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/, m);
-            if (length(m[0]) > 0) print "email: " m[0];
+            if (length(m[0]) > 0) printf "\t\t%s\n", "email: " m[0];
         }
     }
-    { print }' | sort -u >> $ip_ownership_file
+    { printf "\t\t%s\n", $0 }' | sort -u >> $ip_ownership_file
 
-    echo "~" >> $ip_ownership_file
+
+    echo "	    ~" >> $ip_ownership_file
     # Violation Details
-    echo "**Suspected Details of Sanction Violation:**" >> $ip_ownership_file
-    echo "The suspected sanction violation stems from the entity's ownership, operation and control of the IP range used for infrastructure, which constitutes material support non-compliant with EU or US sanctions and applicable laws." >> $ip_ownership_file	
-    echo "~" >> $ip_ownership_file
+    echo "	    **Suspected Details of Sanction Violation:**" >> $ip_ownership_file
+    echo "	    The suspected sanction violation stems from the entity's ownership, operation and control of the IP range used for infrastructure," >> $ip_ownership_file 
+    echo "	    which constitutes material support non-compliant with EU or US sanctions and applicable laws." >> $ip_ownership_file	
+    echo "	    ~" >> $ip_ownership_file
     # Cross-Refernce public data of supporting evidence
-    echo "**Supporting Evidence:** " >> $ip_ownership_file
-    echo "EU Sanctioned $(grep -B2 $ip $eu_dns_records_file | grep "Top Level Domain" | sort | uniq)" >> $ip_ownership_file
-    echo "US Sanctioned $(grep -B2 $ip $us_dns_records_file | grep "Top Level Domain" | sort | uniq)" >> $ip_ownership_file
-    echo "Resolving IP: $ip" >> $ip_ownership_file
+    echo "	    **Supporting Evidence:** " >> $ip_ownership_file
+    echo "	    EU Sanctioned $(grep -B2 $ip $eu_dns_records_file | grep "Top Level Domain" | sort | uniq)" >> $ip_ownership_file
+    echo "	    US Sanctioned $(grep -B2 $ip $us_dns_records_file | grep "Top Level Domain" | sort | uniq)" >> $ip_ownership_file
+    echo "	    Resolving IP: $ip" >> $ip_ownership_file
 
     echo ""\`\`\`"" >> $ip_ownership_file
     sleep 1
@@ -137,7 +139,7 @@ awk -v template="$report_template_file" -v output_base="$final_report_file" '
         gsub(/\n$/, "", block); # Trim trailing new line
 
         # Define the output file path
-        output_file=output_base "_" block_number "_sanction_violation.md";
+        output_file=output_base "_" block_number "_sanction_violation.html";
 
         # Read and process the template file
         while ((getline line < template) > 0) {
@@ -164,7 +166,7 @@ echo "Full Discovery located at: $ip_ownership_file"
 echo "EU/US Discovery located at: $filtered_report_file"
 echo ""
 echo "Submission Ready Reports located at: "
-echo "$(ls -1 $final_report_file*violation.md)"
+echo "$(ls -1 $final_report_file*violation.html)"
 echo ""
 
 # Ask user if they would like to review reports
@@ -183,7 +185,7 @@ echo "Would you like to email the reports? (yes/no)"
 read -r email_answer
 
 if [[ "$email_answer" == "yes" ]]; then
-    for report in $final_report_file*_sanction_violation.md; do
+    for report in $final_report_file*_sanction_violation.html; do
         # Initialize the recipients list with a primary recipient
         recipients="relex-sanctions@ec.europa.eu"
 
