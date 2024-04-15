@@ -75,20 +75,14 @@ echo "Performing WHOIS lookups..."
 echo "" > $ip_ownership_file
 for ip in $(cat $eu_dns_records_file $us_dns_records_file | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" | sort | uniq); do
     echo "Discovery in progress for $ip WHOIS record. Stand By..."	
-    echo "\`\`\`" >> $ip_ownership_file    
+    echo ""\`\`\`"" >> $ip_ownership_file    
     echo "**Owner information suspected of sanction violations:** " >> $ip_ownership_file
     # Defined DNS Fields to pull. May want to grab contact information.
-    # whois $ip | grep -iE 'inetnum|OrgName|org-name|Country|address|phone|remarks|abuse-email|abuse contact for' | sed -E 's/.*abuse contact for .* is '\''([^'\'']+)'\''/\1/i' |sort -u >> $ip_ownership_file
-    whois $ip | grep -iE 'inetnum|OrgName|org-name|Country|address|phone|remarks|OrgAbuseEmail|abuse-email|abuse contact for' | awk '
-    /abuse contact for/ { 
-        match($0, /'\''([^'\'']+@[^'\'']+)'\''/, arr); 
+    whois $ip | grep -iE 'inetnum|OrgName|org-name|Country|address|phone|remarks|OrgAbuseEmail|abuse-email|abuse contact for' | gawk '
+    /abuse contact for|Abuse contact for/ { 
+        match($0, /\x27([^\x27]+@[^\x27]+)\x27/, arr);
         if (length(arr[1]) > 0) print "email: " arr[1];
         next; 
-    }
-    /Abuse contact for/ {
-        match($0, /'\''([^'\'']+@[^'\'']+)'\''/, arr);
-        if (length(arr[1]) > 0) print "email: " arr[1];
-        next;
     }
     /abuse@|@abuse/ {
         match($0, /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/, m);
@@ -114,7 +108,7 @@ for ip in $(cat $eu_dns_records_file $us_dns_records_file | grep -oE "\b([0-9]{1
     echo "US Sanctioned $(grep -B2 $ip $us_dns_records_file | grep "Top Level Domain" | sort | uniq)" >> $ip_ownership_file
     echo "Resolving IP: $ip" >> $ip_ownership_file
 
-    echo "\`\`\`" >> $ip_ownership_file
+    echo ""\`\`\`"" >> $ip_ownership_file
     sleep 1
 done
 
@@ -158,10 +152,6 @@ awk -v template="$report_template_file" -v output_base="$final_report_file" '
         # Increment the block number
         block_number++;
     }' "$filtered_report_file"
-
-# Send report
-echo "Sending report..."
-# mail -s "Suspected Sanction Violation Report" -A $final_report_file relex-sanctions@ec.europa.eu
 
 # Schedule follow-up
 # echo "Scheduling follow-up reminder..."
@@ -212,4 +202,3 @@ if [[ "$email_answer" == "yes" ]]; then
     done
     echo "Emails sent successfully."
 fi
-
