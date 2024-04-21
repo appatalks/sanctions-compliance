@@ -8,35 +8,35 @@
 <details>
   <summary>Austria</summary>
   Competent authorities: <a href="https://www.bmeia.gv.at/en/european-foreign-policy/foreign-policy/europe/eu-sanctions-national-authorities/">Austria</a><br>
-  Contact Source: <a href="https://"></a><br> 
-  E-mail: 
+  Authortive Contact: <a href="https://www.bmaw.gv.at/en.html">Federal Ministry for Labour and Economy</a><br> 
+  E-mail: exportkontrolle@bmdw.gv.at
 </details>
  
 <details>
   <summary>Belgium</summary>
   Competent authorities: <a href="https://diplomatie.belgium.be/en/policy/policy_areas/peace_and_security/sanctions">Belgium</a><br>
-  Contact Source: <a href="https://"></a><br> 
-  E-mail: 
+  Authortive Contact: <a href="https://diplomatie.belgium.be/en/policy/policy-areas/peace-and-security/sanctions/belgian-authorities-in-charge-implementation-restrictive-measures-eu">Belgian authorities</a><br> 
+  E-mail: sanctions@diplobel.fed.be
 </details>
 
 <details>
   <summary>Bulgaria</summary>
   Competent authorities: <a href="https://www.mfa.bg/en/EU-sanctions">Bulgaria</a><br>
-  Contact Source: <a href="https://"></a><br> 
+  Authortive Contact: <a href="https://"></a><br> 
   E-mail: 
 </details>
 
 <details>
   <summary>Croatia</summary>
   Competent authorities: <a href="https://mvep.gov.hr/vanjska-politika/medjunarodne-mjere-ogranicavanja/22955">Croatia</a><br>
-  Contact Source: <a href="https://"></a><br> 
+  Authortive Contact: <a href="https://"></a><br> 
   E-mail: 
 </details>
 
 <details>
   <summary>Cyprus</summary>
   Competent authorities: <a href="https://mfa.gov.cy/themes/">Cyprus</a><br>
-  Contact Source: <a href="https://"></a><br> 
+  Authortive Contact: <a href="https://"></a><br> 
   E-mail: 
 </details>
 
