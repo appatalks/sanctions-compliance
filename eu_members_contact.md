@@ -30,21 +30,21 @@
   <summary>Croatia</summary>
   Competent authorities: <a href="https://mvep.gov.hr/vanjska-politika/medjunarodne-mjere-ogranicavanja/22955">Croatia</a><br>
   Authortive Contact: <a href="https://"></a><br> 
-  E-mail: 
+  E-mail: sankcije@mvep.hr
 </details>
 
 <details>
   <summary>Cyprus</summary>
   Competent authorities: <a href="https://mfa.gov.cy/themes/">Cyprus</a><br>
-  Authortive Contact: <a href="https://"></a><br> 
-  E-mail: 
+  Authortive Contact: <a href="https://mof.gov.cy/en/whistleblowing/1383/?ctype=ar">Ministry of Finance</a><br> 
+  E-mail: info@mfa.gov.cy ??, eyianoulatou@cssda.gov.cy
 </details>
 
 <details>
   <summary>Czech Republic</summary>
   Competent authorities: <a href="https://fau.gov.cz/en/international-sanctions">Czech Republic</a><br>
-  Contact Source: <a href="https://"></a><br> 
-  E-mail: 
+  Contact Source: <a href="https://www.mfcr.cz/en/eu-and-international-affairs/international-sanctions">Ministry of Finance</a><br> 
+  E-mail: podatelna@mfcr.cz
 </details>
 
 <details>
