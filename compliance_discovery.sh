@@ -32,7 +32,7 @@ curl -s $(curl -s $eu_sanctions_url | jq -r '.result.resources[] | select(.forma
 
 # Download US Sanctions List
 echo "Downloading US Sanctions List..."
-curl -s $us_sanctions_url -o $us_sanctions_file
+wget $us_sanctions_url -O $us_sanctions_file --quiet
 
 # Extract EU sanctioned TLDs
 # Targeting .RU Entities
@@ -117,6 +117,7 @@ done
 # Filter for $COUNTRY_CODE domains using non-RU country
 echo "Filtering $COUNTRY_CODE records..."
 
+# Check Country Code here if Changed - Currently hardcoded here.
 awk 'BEGIN{RS="```"; FS="\n"}
     /Domain:.*\.ru/ { # Check for presence of TLD line with a .ru domain
         count_ru = 0; other_country = 0; print_block = 1
@@ -181,7 +182,7 @@ echo ""
 
 # Ask user if they would like to submit reports by Email
 # If user selects yes, send seperate emails for each report to relex-sanctions@ec.europa.eu
-echo "Would you like to email the reports? (yes/no)"
+echo "Are the Reprots ready for Email Submission? (yes/no)"
 read -r email_answer
 
 if [[ "$email_answer" == "yes" ]]; then
