@@ -10,7 +10,7 @@
 
 # Options
 DNS="@1.1.1.1"
-COUNTRY_CODE=".ru" # manually update lines [100 - 107] too!!
+COUNTRY_CODE=".ru" # manually update lines [120 block] too!!
 
 # Define paths for files
 eu_sanctions_url="https://data.europa.eu/euodp/data/api/3/action/package_show?id=consolidated-list-of-persons-groups-and-entities-subject-to-eu-financial-sanctions"
